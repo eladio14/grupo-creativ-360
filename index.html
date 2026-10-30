@@ -36,7 +36,8 @@
     .container { margin: 0 auto; max-width: var(--max); padding: 0 28px; }
     .eyebrow { color: var(--gold-bright); font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; }
     .section-heading { max-width: 700px; }
-    .section-heading h2 { font-family: "Playfair Display", serif; font-size: clamp(36px, 5vw, 58px); line-height: 1.04; margin-top: 14px; }
+    .section-heading h2, .section-title { font-family: "Playfair Display", serif; font-size: clamp(36px, 5vw, 58px); line-height: 1.04; }
+    .section-heading h2 { margin-top: 14px; }
     .section-heading p { color: var(--muted); font-size: 17px; margin-top: 18px; max-width: 590px; }
     .sr-only { height: 1px; margin: -1px; overflow: hidden; position: absolute; width: 1px; clip: rect(0, 0, 0, 0); }
     .skip-link { background: var(--gold-bright); color: #000; left: 12px; padding: 8px 14px; position: fixed; top: -50px; z-index: 99; }
@@ -71,7 +72,7 @@
     .hero-note { align-items: center; color: #8d8980; display: flex; font-size: 12px; gap: 10px; margin-top: 22px; }
     .hero-note strong { color: var(--gold-bright); font-size: 16px; }
     .hero-visual { min-height: 500px; position: relative; }
-    .hero-image { background: linear-gradient(135deg, rgba(8,8,8,.08), rgba(8,8,8,.58)), url("./assets/proyecto-furgoneta.jpeg") center/cover; border: 1px solid var(--line); border-radius: 4px; box-shadow: var(--shadow); height: 480px; margin-left: 35px; }
+    .hero-image { background: linear-gradient(135deg, rgba(8,8,8,.08), rgba(8,8,8,.58)), url("./assets/proyecto-furgoneta.jpeg") center/cover; border: 1px solid var(--line); border-radius: 4px; box-shadow: var(--shadow); height: 480px; margin-left: 35px; position: relative; }
     .hero-image::after { border: 1px solid var(--gold); content: ""; inset: 18px -18px -18px 18px; position: absolute; z-index: -1; }
     .floating-card { background: rgba(17,17,15,.94); border: 1px solid var(--line); bottom: 12px; box-shadow: var(--shadow); left: 0; padding: 19px; position: absolute; width: 220px; }
     .floating-card strong { display: block; font-family: "Playfair Display", serif; font-size: 30px; }
@@ -84,19 +85,19 @@
 
     .services, .about, .process, .portfolio, .contact { padding: 125px 0; }
     .services { background: linear-gradient(180deg, #0b0b0a, var(--panel)); }
-    .service-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); margin-top: 55px; }
-    .service-card { background: var(--panel-soft); border: 1px solid rgba(255,255,255,.08); min-height: 405px; overflow: hidden; position: relative; }
+    .service-grid { align-items: stretch; display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); margin-top: 55px; }
+    .service-card { background: var(--panel-soft); border: 1px solid rgba(255,255,255,.08); display: flex; flex-direction: column; min-height: 405px; overflow: hidden; position: relative; }
     .service-card:hover { border-color: var(--gold); }
     .service-card-image { background-position: center; background-size: cover; height: 220px; position: relative; }
     .service-card-image::after { background: linear-gradient(transparent, rgba(8,8,8,.72)); content: ""; inset: 0; position: absolute; }
-    .service-card-content { padding: 25px; }
+    .service-card-content { display: flex; flex: 1; flex-direction: column; padding: 25px; }
     .service-card h3 { font-family: "Playfair Display", serif; font-size: 27px; }
     .service-card p { color: var(--muted); font-size: 14px; margin: 10px 0 20px; }
-    .text-link { color: var(--gold-bright); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-decoration: none; text-transform: uppercase; }
+    .text-link { color: var(--gold-bright); font-size: 12px; font-weight: 700; letter-spacing: .08em; margin-top: auto; text-decoration: none; text-transform: uppercase; }
     .text-link::after { content: "  →"; }
 
     .about-grid { align-items: center; display: grid; gap: 70px; grid-template-columns: .9fr 1.1fr; }
-    .about-photo { background: url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85") center/cover; min-height: 480px; position: relative; }
+    .about-photo { background: url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85") center/cover; isolation: isolate; min-height: 480px; position: relative; }
     .about-photo::before { border: 1px solid var(--gold); content: ""; inset: 18px 18px -18px -18px; position: absolute; z-index: -1; }
     .about-copy p { color: var(--muted); font-size: 16px; margin-top: 22px; }
     .check-list { display: grid; gap: 13px; list-style: none; margin: 28px 0 32px; }
@@ -121,6 +122,7 @@
     .contact { background: linear-gradient(135deg, var(--panel-soft), #0c0c0b); }
     .contact-grid { display: grid; gap: 70px; grid-template-columns: .9fr 1.1fr; }
     .contact-copy > p { color: var(--muted); font-size: 16px; margin: 20px 0 30px; max-width: 470px; }
+    .contact-copy .section-title { max-width: 520px; }
     .contact-details { display: grid; gap: 14px; list-style: none; }
     .contact-details a { color: var(--white); text-decoration: none; }
     .contact-details a:hover { color: var(--gold-bright); }
@@ -256,7 +258,7 @@
         <div class="about-photo" role="img" aria-label="Interior moderno diseñado por Grupo Creativ 360"></div>
         <div class="about-copy">
           <p class="eyebrow">Una visión, un equipo</p>
-          <h2 class="section-heading">No solo hacemos bonito. Hacemos que funcione.</h2>
+          <h2 class="section-title">No solo hacemos bonito. Hacemos que funcione.</h2>
           <p>Somos un estudio-taller especializado en transformar ideas en espacios y piezas que comunican. Nos implicamos desde el primer boceto hasta el último detalle de la instalación.</p>
           <ul class="check-list">
             <li>Presupuesto claro y acompañamiento cercano.</li>
@@ -302,7 +304,7 @@
       <div class="container contact-grid">
         <div class="contact-copy">
           <p class="eyebrow">Empecemos</p>
-          <h2 class="section-heading">¿Tienes un proyecto en mente?</h2>
+          <h2 class="section-title">¿Tienes un proyecto en mente?</h2>
           <p>Cuéntanos qué necesitas y te responderemos con una orientación inicial y los próximos pasos. Sin compromiso.</p>
           <ul class="contact-details">
             <li><b>↗</b><a href="tel:+34614055368">+34 614 055 368</a></li>

@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Grupo Creativ 360: rótulos, publicidad y reformas en Sabadell y Barcelona.">
+  <title>Grupo Creativ 360 | Rótulos, Publicidad y Reformas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #d4af63;
+      --gold-light: #f5d88a;
+      --black: #070707;
+      --dark: #101010;
+      --muted: #999;
+      --line: #2a2a2a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: #fff;
+      font-family: "Montserrat", sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      align-items: center;
+      background: rgba(10, 10, 10, 0.96);
+      border-bottom: 1px solid #222;
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 5%;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo-wrap {
+      align-items: center;
+      border: 1.8px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      flex: 0 0 auto;
+      height: 94px;
+      justify-content: center;
+      width: 94px;
+    }
+
+    .logo-inner {
+      align-items: center;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      height: 81px;
+      justify-content: center;
+      text-align: center;
+      width: 81px;
+    }
+
+    .logo-inner .t {
+      color: var(--gold);
+      font-size: 6px;
+      letter-spacing: 2px;
+    }
+
+    .logo-inner .m {
+      color: var(--gold-light);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      line-height: 1;
+    }
+
+    .logo-inner .b {
+      color: var(--gold);
+      font-size: 3.5px;
+      letter-spacing: 0.5px;
+      margin-top: 3px;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: #fff;
+    }
+
+    .btn {
+      background: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 30px;
+      color: #000;
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      padding: 13px 24px;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+    }
+
+    .hero {
+      background: radial-gradient(circle at center, #171717 0%, var(--black) 70%);
+      padding: 110px 6% 90px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      color: var(--gold-light);
+      font-size: clamp(42px, 8vw, 72px);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 0.95;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 24px auto 30px;
+      max-width: 620px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .services {
+      display: grid;
+      gap: 22px;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 50px 6%;
+    }
+
+    .card {
+      background: #111;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .card-img {
+      background-position: center;
+      background-size: cover;
+      height: 240px;
+    }
+
+    .card-body {
+      padding: 22px;
+      text-align: center;
+    }
+
+    .card-body h2 {
+      color: var(--gold);
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    .card-body p {
+      color: #777;
+      font-size: 13px;
+      margin-top: 8px;
+    }
+
+    .contact {
+      background: var(--dark);
+      border-top: 1px solid #222;
+      display: grid;
+      gap: 40px;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 40px;
+      padding: 70px 6%;
+    }
+
+    .contact h2 {
+      color: var(--gold-light);
+      font-size: 28px;
+      line-height: 1.1;
+    }
+
+    .contact-copy {
+      color: #888;
+      margin-top: 16px;
+    }
+
+    .contact-copy a {
+      color: var(--gold-light);
+      text-decoration: none;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 8px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      background: var(--black);
+      border: 1px solid #333;
+      border-radius: 10px;
+      color: #fff;
+      font: inherit;
+      padding: 14px;
+      width: 100%;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--gold);
+      outline: 2px solid rgba(212, 175, 99, 0.25);
+    }
+
+    .contact-form .btn {
+      cursor: pointer;
+      margin-top: 4px;
+      text-align: center;
+    }
+
+    .site-footer {
+      color: #555;
+      font-size: 11px;
+      letter-spacing: 1px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .site-header {
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+      }
+
+      nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .services,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      nav {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .hero {
+        padding-top: 75px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo-wrap" href="#inicio" aria-label="Grupo Creativ 360, inicio">
+      <span class="logo-inner" aria-hidden="true">
+        <span class="t">GRUPO</span>
+        <span class="m">CREATIV<br>360</span>
+        <span class="b">RÓTULOS | PUBLICIDAD | REFORMAS</span>
+      </span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#rotulos">RÓTULOS</a>
+      <a href="#publicidad">PUBLICIDAD</a>
+      <a href="#reformas">REFORMAS</a>
+      <a href="#contacto">CONTACTO</a>
+    </nav>
+    <a class="btn" href="https://wa.me/34614055368" target="_blank" rel="noopener">SOLICITAR PRESUPUESTO</a>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <h1>TU PROYECTO<br>NUESTRA<br>CREATIVIDAD</h1>
+      <p>Soluciones integrales en señalización, publicidad y reformas para transformar tu espacio con diseño y calidad premium. Sabadell - Barcelona.</p>
+      <div class="hero-actions">
+        <a class="btn" href="https://wa.me/34614055368" target="_blank" rel="noopener">SOLICITA TU PRESUPUESTO</a>
+        <a class="btn btn-outline" href="#servicios">VER PROYECTOS</a>
+      </div>
+    </section>
+
+    <section class="services" id="servicios" aria-label="Servicios">
+      <article class="card" id="rotulos">
+        <div class="card-img" role="img" aria-label="Rótulo de un comercio" style="background-image:url('https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=1200&q=80')"></div>
+        <div class="card-body">
+          <h2>RÓTULOS</h2>
+          <p>Señalización corporativa y luminosa a medida.</p>
+        </div>
+      </article>
+      <article class="card" id="publicidad">
+        <div class="card-img" role="img" aria-label="Diseño gráfico publicitario" style="background-image:url('https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1200&q=80')"></div>
+        <div class="card-body">
+          <h2>PUBLICIDAD</h2>
+          <p>Campañas visuales, vinilos y branding.</p>
+        </div>
+      </article>
+      <article class="card" id="reformas">
+        <div class="card-img" role="img" aria-label="Interiorismo y reforma de interiores" style="background-image:url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=80')"></div>
+        <div class="card-body">
+          <h2>REFORMAS</h2>
+          <p>Reformas integrales y diseño de interiores.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="contact" id="contacto">
+      <div>
+        <h2>¿Listo para transformar tu espacio?</h2>
+        <p class="contact-copy">
+          Freddy Viloria<br>
+          Grupo Creativ 360<br>
+          Sabadell - Barcelona<br><br>
+          <a href="tel:+34614055368">+34 614 055 368</a><br>
+          <a href="mailto:Freddyviloria82@gmail.com">Freddyviloria82@gmail.com</a><br>
+          <a href="mailto:info@grupocreativ360.com">info@grupocreativ360.com</a>
+        </p>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <label class="sr-only" for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" placeholder="Nombre" required>
+        <label class="sr-only" for="telefono">Teléfono</label>
+        <input id="telefono" name="telefono" type="tel" placeholder="Teléfono" required>
+        <label class="sr-only" for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="Email" required>
+        <label class="sr-only" for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos tu proyecto de rótulos, publicidad o reformas" required></textarea>
+        <button class="btn" type="submit">ENVIAR POR WHATSAPP</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © 2026 GRUPO CREATIV 360 - RÓTULOS | PUBLICIDAD | REFORMAS - Más de 10 años creando espacios únicos
+  </footer>
+
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const data = new FormData(event.currentTarget);
+      const message = [
+        "Hola, quiero solicitar un presupuesto.",
+        `Nombre: ${data.get("nombre")}`,
+        `Teléfono: ${data.get("telefono")}`,
+        `Email: ${data.get("email")}`,
+        `Proyecto: ${data.get("mensaje")}`
+      ].join("\n");
+      window.open(`https://wa.me/34614055368?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+    });
+  </script>
+</body>
+</html>
